@@ -894,6 +894,15 @@ html {
     border-radius: 16px;
 }
 
+.textAnimation {
+    width: 100%;
+    height: 128px;
+    background-image: url("../images/textAnimation.gif");
+    background-size: contain;
+    background-position: center;
+    margin: auto;
+}
+
 /* SECT6 - FORM */
 #sect6 {
     width: 100%;
