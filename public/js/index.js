@@ -45,243 +45,57 @@ closeOffCanvasLinks.forEach((link) => {
   });
 });
 
+//TAB BAR
+const tabMenuStyles = document.querySelectorAll(".tabMenuStyle");
+const tabContentSettings = document.querySelectorAll(".tabContentSetting");
+tabMenuStyles.forEach((tabMenuStyle, index) => {
+  tabMenuStyle.addEventListener("click", () => {
+    // Remove active class from all tab menu styles
+    tabMenuStyles.forEach((style) => style.classList.remove("active"));
 
+    // Add active class to the clicked tab menu style
+    tabMenuStyle.classList.add("active");
 
+    // Remove active class from all tab content settings
+    tabContentSettings.forEach((setting) => setting.classList.remove("active"));
 
-//ACCORDION FUNCTION
-class Accordion {
-  constructor(element) {
-    this.element = element;
-    this.items = Array.from(element.querySelectorAll(".Accordion-item"));
-    this.activeItem = null;
-
-    this.openFirstItem();
-
-    this.items.forEach((item) => {
-      const toggle = item.querySelector(".Accordion-toggle");
-      toggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        this.toggleItem(item);
-      });
-    });
-  }
-
-  openFirstItem() {
-    const firstItem = this.items[0];
-    firstItem.classList.add("active");
-    this.activeItem = firstItem;
-    this.openContent(firstItem);
-  }
-
-  toggleItem(item) {
-    if (this.activeItem === item) {
-      // Do nothing if the same item is clicked again
-      return;
-    } else {
-      if (this.activeItem) {
-        this.activeItem.classList.remove("active");
-        this.closeContent(this.activeItem);
-      }
-      item.classList.add("active");
-      this.activeItem = item;
-      this.openContent(item);
-
-      // Get all accordion anchor elements
-      const anchorElements = document.querySelectorAll(
-        ".accordionCampusAnchor"
-      );
-
-      // Remove all accordion item classes from the anchor elements
-      anchorElements.forEach((anchorElement) => {
-        Array.from(anchorElement.classList).forEach((cls) => {
-          if (cls.startsWith("accordionItem")) {
-            anchorElement.classList.remove(cls);
-          }
-        });
-      });
-
-      // Add the class corresponding to the active accordion item
-      anchorElements.forEach((anchorElement) => {
-        anchorElement.classList.add(
-          `accordionItem${item.id.replace("accordionItem", "")}`
-        );
-      });
-    }
-  }
-
-  openContent(item) {
-    const content = item.querySelector(".Accordion-content");
-    content.style.maxHeight = content.scrollHeight + "px";
-    // Add active CSS styles to the active accordion item
-    item.querySelector(".Accordion-toggle").classList.add("active-toggle");
-    item.classList.add("active-accordion-item");
-  }
-
-  closeContent(item) {
-    const content = item.querySelector(".Accordion-content");
-    content.style.maxHeight = null;
-    // Remove active CSS styles from the inactive accordion item
-    item.querySelector(".Accordion-toggle").classList.remove("active-toggle");
-    item.classList.remove("active-accordion-item");
-  }
-
-  resetAccordion() {
-    this.items.forEach((item) => {
-      item.classList.remove("active");
-      this.closeContent(item);
-    });
-    this.activeItem = null;
-  }
-
-  resetAnchorClass(activeItemId) {
-    const anchorElements = document.querySelectorAll(".accordionCampusAnchor");
-    anchorElements.forEach((anchorElement) => {
-      Array.from(anchorElement.classList).forEach((cls) => {
-        if (cls.startsWith("accordionItem")) {
-          anchorElement.classList.remove(cls);
-        }
-      });
-      anchorElement.classList.add(
-        `accordionItem${activeItemId.replace("accordionItem", "")}`
-      );
-    });
-  }
-}
-
-// Initialize the accordion
-const accordionElements = document.querySelectorAll(".Accordion");
-accordionElements.forEach((element) => {
-  const accordion = new Accordion(element);
-  element.AccordionInstance = accordion;
-});
-
-const navLinks = document.querySelectorAll(".nav-link");
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    // Remove active class from all nav-links
-    navLinks.forEach((navLink) => navLink.classList.remove("active"));
-    // Add active class to the current nav-link
-    e.target.classList.add("active");
-    const tabId = e.target.getAttribute("data-bs-target");
-    const accordionElement = document.querySelector(`${tabId} .Accordion`);
-    const accordion = accordionElement.AccordionInstance;
-    accordion.resetAccordion();
-
-    const activeItem = accordionElement.querySelector(".active");
-    if (!activeItem) {
-      accordion.openFirstItem();
-    }
-
-    let activeItemId;
-    if (activeItem) {
-      activeItemId = activeItem.id;
-    } else {
-      activeItemId = accordion.items[0].id; // default to the first item
-    }
-
-    accordion.resetAnchorClass(activeItemId);
+    // Add active class to the corresponding tab content setting
+    const tabContentId = `tabContent${tabMenuStyle.dataset.tab}`;
+    document.getElementById(tabContentId).classList.add("active");
   });
 });
 
+//TESTIMONI CARD ARROW BUTTON
+document.addEventListener("DOMContentLoaded", function() {
+  const testimonials = document.querySelectorAll('.testimoniCardStyle');
+  let currentIndex = 0;
 
+  // Function to show the current testimonial
+  function showTestimonial(index) {
+      testimonials.forEach((testimonial, i) => {
+          testimonial.classList.remove('active'); // Remove active class from all
+      });
 
+      // Add active class to the current testimonial
+      testimonials[index].classList.add('active');
 
-//GALLERY HORIZONTAL BUTTON AND AUTO PLAY
-/* SET IMAGE SLIDER HEIGHT */
-const slideImagerImages = document.querySelector('.slideImagerImages');
-const slideImages = document.querySelectorAll('.slideImage');
-let currentIndex = 0;
-let autoslideImageInterval;
-let slideImagerImagesWidth = slideImages[0].offsetWidth;
-
-function nextslideImage() {
-  currentIndex = (currentIndex + 1) % slideImages.length;
-  updateslideImagerImages();
-}
-
-function prevslideImage() {
-  currentIndex = (currentIndex - 1 + slideImages.length) % slideImages.length;
-  updateslideImagerImages();
-}
-
-function updateslideImagerImages() {
-  const activeslideImageOffset = -(slideImages[currentIndex].offsetLeft - (slideImagerImages.clientWidth - slideImagerImagesWidth) / 2);
-
-  if (currentIndex === slideImages.length - 1 && !slideImagerImages.style.transition) {
-    slideImagerImages.style.transition = 'none';
-    slideImagerImages.style.transform = `translateX(0px)`;
-
-    setTimeout(() => {
-      slideImagerImages.style.transition = 'transform 0.5s ease-in-out';
-      currentIndex = 0;
-      updateslideImagerImages();
-    }, 0);
-  } else {
-    slideImagerImages.style.transform = `translateX(${activeslideImageOffset}px)`;
+      // Scroll the active testimonial into view
+      testimonials[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
   }
 
-  updateslideImageVisibility(); // Call the function to update slideImage visibility
-  updateslideImageSize();
-}
-
-function updateslideImageVisibility() {
-  slideImages.forEach((slideImage, index) => {
-    if (index === currentIndex || (index === currentIndex - 1 && currentIndex === 0)) {
-      slideImage.classList.remove('inactive');
-    } else {
-      slideImage.classList.add('inactive');
-    }
+  // Show the first testimonial initially
+  testimonials[currentIndex].classList.add('active');
+  
+  // Event listener for the left arrow button
+  document.querySelector('.btnIconArrowLeft').addEventListener('click', function() {
+      currentIndex = (currentIndex > 0) ? currentIndex - 1 : testimonials.length - 1; // Loop to the last if at the first
+      showTestimonial(currentIndex);
   });
-}
 
-function updateslideImageSize() {
-  slideImages.forEach((slideImage, index) => {
-    if (index === currentIndex) {
-      slideImage.style.transform = 'scale(1.2)'; // Increase size for the active slideImage
-    } else {
-      slideImage.style.transform = 'scale(0.8)'; // Reset size for inactive slideImages
-    }
+  // Event listener for the right arrow button
+  document.querySelector('.btnIconArrowRight').addEventListener('click', function() {
+      currentIndex = (currentIndex < testimonials.length - 1) ? currentIndex + 1 : 0; // Loop to the first if at the last
+      showTestimonial(currentIndex);
   });
-}
-
-// Auto-slideImage functionality
-function startAutoslideImage() {
-  autoslideImageInterval = setInterval(() => {
-    nextslideImage();
-  }, 3000); // Change slideImage every 3 seconds (adjust as needed)
-}
-
-function stopAutoslideImage() {
-  clearInterval(autoslideImageInterval);
-}
-
-// Start auto-slideImage when the page loads
-startAutoslideImage();
-
-// Pause auto-slideImage on hover (optional)
-slideImagerImages.addEventListener('mouseover', stopAutoslideImage);
-slideImagerImages.addEventListener('mouseout', startAutoslideImage);
-
-// Loop back to the first image after any slideImage
-function checkLastslideImage() {
-  if (currentIndex === slideImages.length - 1 || currentIndex === 0) {
-    setTimeout(() => {
-      currentIndex = 1; // Start from the second image
-      updateslideImagerImages();
-    }, 500); // Delay before looping to the second slideImage
-  }
-}
-
-// Listen for the end of the transition to check for the last slideImage
-slideImagerImages.addEventListener('transitionend', checkLastslideImage);
-
-// Recalculate slideImagerImagesWidth when the window is resized
-window.addEventListener('resize', () => {
-  slideImagerImagesWidth = slideImagerImages.clientWidth;
-  updateslideImagerImages();
 });
-
-// Initial positioning and sizing
-updateslideImagerImages();
 

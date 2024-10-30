@@ -4,11 +4,11 @@ body {
     font-family: 'Inter', sans-serif;
     text-align: center;
     background-color: #F8F8F8;
-    color: #05195A;
+    color: #2F4293;
 }
 
 a {
-    color: #05195A;
+    color: #2F4293;
     text-decoration: none;
 }
 
@@ -308,7 +308,7 @@ html {
 
 .inlineLink {
     text-decoration: underline;
-    color: #DB5935;
+    color: #2F4293;
 }
 
 .inlineLink:hover{
@@ -346,7 +346,7 @@ html {
 }
 
 .nav .nav-link.active {
-    color: #DB5935;
+    color: #2F4293;
 }
 
 .sectionTitle {
@@ -372,11 +372,11 @@ html {
   
 ::-webkit-scrollbar-thumb {
     border-radius: 16px;
-    background: #DB5935;
+    background: #DE0F15;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #D23B11; 
+    background: #BC0005; 
 }
 
 
@@ -442,7 +442,6 @@ html {
     0% {
         height: 40%;
     }
-
     100% {
         height: 100%;
     }
@@ -452,7 +451,6 @@ html {
     0% {
         height: 100%;
     }
-
     100% {
         height: 40%;
     }
@@ -462,7 +460,6 @@ html {
     0% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
     }
@@ -472,7 +469,6 @@ html {
     0% {
         opacity: 1;
     }
-
     100% {
         opacity: 0;
     }
@@ -496,7 +492,7 @@ html {
 
 .sect1Copy {
     position: absolute;
-    bottom: calc(100%/8);
+    bottom: calc(100%/4);
     z-index: 2;
     text-align: left;
 }
@@ -524,6 +520,7 @@ html {
 
 /* SECT2 - INTRO*/
 #sect2 {
+    position: relative;
     padding-top: 40px;
 }
 
@@ -542,17 +539,23 @@ html {
 }
 
 /* SECT3 - FACTS*/
-#sect2-1 {
+#sect3 {
     width: 100%;
+    padding-top: 64px;
     overflow: hidden;
 }
 
+.factCopyTitle{
+    text-align: left;
+    padding: 0;
+}
+
 .factMainContainer{
-    display: flex;
+    display: inline-flex;
     text-align: left;
     gap: 16px;  
     white-space: nowrap; /* Prevent line breaks */
-    animation: move 5s linear infinite; /* Animation for moving effect */ 
+    animation: move 20s linear infinite; /* Animation for moving effect */ 
 }
 
 
@@ -650,273 +653,120 @@ html {
 }
 
 
-/* SECT3 - CAMPUSES*/
-.navTabContainer {
-    width: 100%;
-    gap: 0;
-    border-bottom: solid 1px #C1CED9;
+/* SECT4 - VALUE*/
+#sect4 {
+    background-color: #2F4293;
+    padding: 112px 0;
 }
 
-.contentNavTabContainer {
-    padding: 40px 0 16px;
-}
-
-.marginCampusParagraph{
-    margin: 0 0 24px;
-}
-
-.accordionCampusContainer {
-    display: flex;
-    margin: 40px auto;
-    height: 100%;
+.valueTitle{
+    text-align: left;
     padding: 0;
 }
 
-.Accordion-item {
-    text-align: left;
-    background-color: #E9ECEF;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #1E4F80; /* for text color */
-}
-
-.Accordion-togglePadding {
-    padding: 32px 24px;
-}
-
-.Accordion-item:hover {
-    background-color: #2AB3BE;
-    color: #F8F8F8;
-}
-
-.Accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s;
-}
-
-.active-toggle {
-    color: #F8F8F8;
-}
-
-.active-accordion-item {
-    background-color: #2AB3BE;
-    color: #F8F8F8;
-}
-
-.accordionCampusImgContainer {
-    padding-left: 16px;
-}
-
-.accordionCampusAnchor {
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-}
-
-.accordionItemLV1 {
-    background-image: url("../images/accordionCampusLV-1.jpg");
-}
-
-.accordionItemLV2 {
-    background-image: url("../images/accordionCampusLV-2.jpg");
-}
-
-.accordionItemLV3 {
-    background-image: url("../images/accordionCampusLV-3.jpg");
-}
-
-.accordionItemLV4 {
-    background-image: url("../images/accordionCampusLV-4.jpg");
-}
-
-
-.accordionItemSC1 {
-    background-image: url("../images/accordionCampusSC-1.jpg");
-}
-
-.accordionItemSC2 {
-    background-image: url("../images/accordionCampusSC-2.jpg");
-}
-
-.accordionItemSC3 {
-    background-image: url("../images/accordionCampusSC-3.jpg");
-}
-
-.accordionItemSC4 {
-    background-image: url("../images/accordionCampusSC-4.jpg");
-}
-
-
-.accordionItemLC1 {
-    background-image: url("../images/accordionCampusLC-1.jpg");
-}
-
-.accordionItemLC2 {
-    background-image: url("../images/accordionCampusLC-2.jpg");
-}
-
-.accordionItemLC3 {
-    background-image: url("../images/accordionCampusLC-3.jpg");
-}
-
-.accordionItemLC4 {
-    background-image: url("../images/accordionCampusLC-4.jpg");
-}
-
-
-.accordionItemKV1 {
-    background-image: url("../images/accordionCampusKV-1.jpg");
-}
-
-.accordionItemKV2 {
-    background-image: url("../images/accordionCampusKV-2.jpg");
-}
-
-.accordionItemKV3 {
-    background-image: url("../images/accordionCampusKV-3.jpg");
-}
-
-.accordionItemKV4 {
-    background-image: url("../images/accordionCampusKV-4.jpg");
-}
-
-
-.accordionItemPV1 {
-    background-image: url("../images/accordionCampusPV-1.jpg");
-}
-
-.accordionItemPV2 {
-    background-image: url("../images/accordionCampusPV-2.jpg");
-}
-
-.accordionItemPV3 {
-    background-image: url("../images/accordionCampusPV-3.jpg");
-}
-
-.accordionItemPV4 {
-    background-image: url("../images/accordionCampusPV-4.jpg");
-}
-
-
-/* SECT5 - GALLERIES */
-.slideImagerImages-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.slideImagerImages {
+.tabContainer{
     display: flex;
-    transition: transform 1s ease-in-out;
+    flex-direction: column;
 }
 
-.slideImage {
-    flex: 0 0 calc(100% / 3); /* Display 3 images with equal width */
-    height: auto;
-    text-align: center;
-    margin-right: 10px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out, scale 0.5s ease-in-out;
+.tabMenu{
+    display: flex;
+    gap: 16px;
 }
 
-.slideImage img {
-    max-width: 100%;
-    height: auto;
-}
-
-.slideImagerImages-controls {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.slideImage.inactive {
-    position: relative; /* Remove the absolute positioning */
-}
-
-.slideImage.inactive::before {
-    content: ""; /* Create a pseudo-element for the overlay */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.7); /* White overlay color */
-}
-
-.buttonArrowLeft {
-    position: absolute;
-    bottom: 40%;
-    left: 5%;
-    z-index: 1;
-    height: 40px;
-    width: 40px;
-    background-image: url("../images/buttonArrow.png");
-    background-size: cover;
-    background-position: center;
+.tabMenuStyle{
+    padding: 32px 24px;
+    background-color: #F4C145;
+    border-radius: 16px;
+    text-align: left;
+    line-height: normal;
     cursor: pointer;
 }
 
-.buttonArrowLeft:hover {
-    background-image: url("../images/buttonArrowHover.png");
+.tabMenuStyle:hover{
+    background-color: #C1CED9;
 }
 
-.buttonArrowRight {
-    position: absolute;
-    bottom: 40%;
-    right: 5%;
-    z-index: 1;
-    height: 40px;
-    width: 40px;
-    background-image: url("../images/buttonArrow.png");
+.tabMenuStyle.active {
+    background-color: #F5F5F5;
+}
+
+.tabContentSetting{ /* Hide all tab contents by default */ 
+    display: none; 
+}
+
+.tabContentSetting.active { /* Show the active tab content */
+    display: flex; 
+    gap: 40px;
+    justify-content: center;
+    align-items: center; 
+}
+
+.tabContentLeft{
+    text-align: left;
+    width: 50%;; 
+}
+
+.tabContentRight{
+    text-align: left;
+    width: 50%;
+}
+
+.tabContent1Img{
+    height: 440px;
+    background-image: url("../images/value1Img.png");
     background-size: cover;
     background-position: center;
-    transform: rotate(180deg);
-    cursor: pointer;
 }
 
-.buttonArrowRight:hover {
-    background-image: url("../images/buttonArrowHover.png");
+.tabContent2Img{
+    height: 440px;
+    background-image: url("../images/value2Img.png");
+    background-size: cover;
+    background-position: center;
 }
 
-/* SECT6 - TESTIMONIALS */
-.overflow-x-auto {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 0 5%;
+.tabContent3Img{
+    height: 440px;
+    background-image: url("../images/value3Img.png");
+    background-size: cover;
+    background-position: center;
 }
 
-
-.flex-nowrap {
-    flex-wrap: nowrap;
+.tabContent4Img{
+    height: 440px;
+    background-image: url("../images/value4Img.png");
+    background-size: cover;
+    background-position: center;
 }
 
-.overflow-normal {
-    overflow-x: hidden;
-    white-space: wrap;
+.tabContent5Img{
+    height: 440px;
+    background-image: url("../images/value5Img.png");
+    background-size: cover;
+    background-position: center;
 }
 
-.flex-nowrap {
-    flex-wrap: nowrap;
+.tabContent6Img{
+    height: 440px;
+    background-image: url("../images/value6Img.png");
+    background-size: cover;
+    background-position: center;
 }
 
-/* .modal-body{
-    background-color: red;
-    margin: 0 auto;
-} */
-
-.cardTestimoniContainer {
+/* SECT5 - SCHOOL*/
+#sect5 {
+    padding: 112px 0;
+}
+.cardSchoolContainer {
     height: 320px;
-    width: 280px;
+    min-width: 20%;
     padding: 0 8px;
-    margin: 0 auto;
+    margin: 0 auto 16px;
     position: relative;
-    display: inline-block;
 }
 
-.cardTestimoniContent {
+.cardSchoolTitle {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -926,162 +776,210 @@ html {
     box-sizing: border-box;
     height: 40%;
     justify-content: center;
+    background-color: #05195A;
     border-radius: 0 0 16px 16px;
-    padding: 16px;
 }
 
-.cardTestimoniContainer:hover .cardTestimoniContent {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.0) 90%, rgba(0, 0, 0, 0));
-    height: 70%;
-    transition: all .5s ease-out;
+.cardSchoolContainer:hover .cardSchoolTitle {
+    animation: expandInSchool 0.5s ease-in-out forwards;
+    border-radius: 16px;
+    transition: all 1s linear;
 }
 
-.cardTestimoniContainer:not(:hover) .cardTestimoniContent {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.0) 50%, rgba(0, 0, 0, 0));
-    height: 40%;
-    transition: all .5s ease-out;
+.cardSchoolContainer:not(:hover) .cardSchoolTitle {
+    animation: expandOutSchool 0.5s ease-in-out forwards;
+    border-radius: 0;
+    transition: all 1s linear;
 }
 
-.cardTestimoniContainer:hover .hide {
+@keyframes expandInSchool {
+    0% {
+        height: 40%;
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+    100% {
+        height: 100%;
+        background-color: #05195A;
+    }
+}
+
+@keyframes expandOutSchool {
+    0% {
+        height: 100%;
+        background-color: #05195A;
+    }
+    100% {
+        height: 40%;
+        background-color: rgba(0, 0, 0, 0.0);
+    }
+}
+
+.cardSchoolContainer:hover .hide {
     animation: opacityIn 0.8s ease-in-out forwards;
     display: inline-block;
     margin-top: 18px;
 }
 
-.cardTestimoniContainer:not(:hover) .hide {
+.cardSchoolContainer:not(:hover) .hide {
     animation: opacityOut 0.8s ease-in-out forwards;
 }
 
-.cardTestimoniContainer:hover .blackGradientOverlay::before {
+.cardSchoolContainer:hover .blackGradientOverlay::before {
     animation: expandInSchoolOverlay 1s ease-in-out forwards;
     margin: 0 8px;
     border-radius: 0 0 16px 16px;
 }
 
-.cardTestimoniContainer:not(:hover) .blackGradientOverlay::before {
-    animation: expandOutSchoolOverlay 1s ease-in-out forwards;
+.cardSchoolContainer:not(:hover) .blackGradientOverlay::before {
+    animation: expandOutSchoolOverlay 0.5s ease-in-out forwards;
     margin: 0 8px;
     border-radius: 0 0 16px 16px;
 }
 
-.cardTestimoniTitle{
-    white-space: wrap; /* wrap text inside container */
+@keyframes expandInSchoolOverlay {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
-.modalBodyTestimoniContainer {
-    min-height: 480px;
-    margin-bottom: 80px;
+@keyframes expandOutSchoolOverlay {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-.footerTestimoniIG {
-    padding: 8px 0 0;
-}
-
-.showTable {
-    display: none;
-}
-
-.cardTestimoniImg1 {
+.cardSchoolImg1 {
     height: 320px;
-    background-image: url("../images/cardTestimoniImg1.jpg");
+    background-image: url("../images/cardSchoolImg1.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 16px;
 }
 
-.cardTestimoniImg2 {
+.cardSchoolImg2 {
     height: 320px;
-    background-image: url("../images/cardTestimoniImg2.jpg");
+    background-image: url("../images/cardSchoolImg2.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 16px;
 }
 
-.cardTestimoniImg3 {
+.cardSchoolImg3 {
     height: 320px;
-    background-image: url("../images/cardTestimoniImg3.jpg");
+    background-image: url("../images/cardSchoolImg3.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 16px;
 }
 
-.cardTestimoniImg4 {
+.cardSchoolImg4 {
     height: 320px;
-    background-image: url("../images/cardTestimoniImg4.jpg");
+    background-image: url("../images/cardSchoolImg4.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 16px;
 }
 
-.cardTestimoniImg5 {
+.cardSchoolImg5 {
     height: 320px;
-    background-image: url("../images/cardTestimoniImg5.jpg");
+    background-image: url("../images/cardSchoolImg5.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 16px;
 }
 
-.cardTestimoniImg6 {
-    height: 320px;
-    background-image: url("../images/cardTestimoniImg6.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 16px;
-}
-
-.cardTestimoniImg7 {
-    height: 320px;
-    background-image: url("../images/cardTestimoniImg7.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 16px;
-}
-
-.cardTestimoniImg8 {
-    height: 320px;
-    background-image: url("../images/cardTestimoniImg8.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 16px;
-}
-
-.cardTestimoniImg9 {
-    height: 320px;
-    background-image: url("../images/cardTestimoniImg9.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 16px;
-}
-
-.cardTestimoniImg10 {
-    height: 320px;
-    background-image: url("../images/cardTestimoniImg10.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 16px;
-}
-
-.swipeLeftRight {
-    width: 40px;
-    height: 40px;
-    background-image: url("../images/Swipe-left-right.svg");
-    background-size: contain;
-    background-position: center;
-    margin: auto;
-}
-
-/* SECT7 - CTA */
-#sect7 {
+/* SECT6 - FORM */
+#sect6 {
     width: 100%;
-    height: 640px;
-}
-
-.CTAImg {
-    height: 640px;
+    height: 100%;
     background-image: url("../images/CTAImg.jpg");
     background-size: cover;
     background-position: center;
+    padding: 114px 0;
 }
+
+.formStyle {
+    background-color: #FAFAFA;
+    padding: 80px 40px;
+}
+
+/* SECT7 - TESTIMONI */
+#sect7 {
+    width: 100%;
+    height: 100%;
+    background-color: #F4C145;
+    padding: 114px 0;
+    position: relative;
+}
+
+.bgPatternSquare{
+    width: 100%;
+    height: 200px;
+    background-image: url("../images/bgPatternSquare.svg");
+    background-size: 20px 20px;
+    background-position: start;
+    background-repeat: repeat;
+    position: absolute;
+    bottom: 80px;
+}
+
+.sect7Container{
+    width: 100%;
+}
+
+.sect7TitleIconContainer{
+    display: flex;
+    gap: 16px;
+    justify-content:end;
+    align-items: center;
+}
+
+.btnIconArrowLeft {
+    height: 40px;
+    width: 40px;
+    background-image: url("../images/btnIconArrow.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+.btnIconArrowRight {
+    height: 40px;
+    width: 40px;
+    background-image: url("../images/btnIconArrow.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.testimoniAllContainer{
+    display: flex;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden; /* Allow horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding: 0 20px; /* Add some padding for aesthetics */
+}
+
+.testimoniCardStyle{
+    background-color: #FAFAFA;
+    padding: 32px;
+    border-radius: 16px;
+    text-align: left;
+    min-width: 800px; /* Set a minimum width for each card */
+
+}
+
 
 /* FOOTER */
 .footerTabContainer {
@@ -1092,6 +990,10 @@ html {
 
 .footerTabContainerItem {
     width: 20%;
+}
+
+.contentNavTabContainer {
+    padding: 40px 0 16px;
 }
 
 .logoImg {
@@ -1200,7 +1102,7 @@ html {
         border-radius: 8px;
     }
 
-    /* SECT3 - CAMPUSES */
+    /* SECT4 - VALUE */
     .navTabContainer{
         font-size: 12px;
         margin: 0 16px;
@@ -1223,14 +1125,30 @@ html {
         margin: 0 16px 24px;
     }
 
-    /* SECT5 - GALLERIES */
-    .slideImage {
-        flex: 0 0 100%; 
+    /* SECT5 - SCHOOL */
+    #sect5{
+        margin: 0 2.5%;
+    }
+
+    #sect5 .txtH4{
+        font-size: 24px;
+    }
+
+    .cardSchoolContainer:hover .showMobile {
+        display: none;
+    }
+
+    .cardSchoolContainer:not(:hover) .showMobile {
+        display: inline-block;
+    }
+
+    .marginB80 .marginB16{
+        margin-bottom: 0;
     }
 
     
-    /* SECT6 - TESTIMONIALS */
-    #sect6 {
+    /* SECT7 - TESTIMONIALS */
+    #sect7 {
         margin: 0 
     }
 
