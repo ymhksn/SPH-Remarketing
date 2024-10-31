@@ -752,8 +752,6 @@ html {
 }
 
 .tabContentLeft{
-    position: relative;
-    left: -50vw;
     text-align: left;
     width: 50%;; 
 }

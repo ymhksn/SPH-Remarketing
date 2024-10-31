@@ -17,6 +17,8 @@ document.querySelectorAll(".scroll-link").forEach((anchor) => {
   });
 });
 
+
+//CLOSE MODAL
 const offcanvasElementList = document.querySelectorAll(".offcanvas");
 const offcanvasList = [...offcanvasElementList].map(
   (offcanvasEl) => new bootstrap.Offcanvas(offcanvasEl)
@@ -48,6 +50,7 @@ closeOffCanvasLinks.forEach((link) => {
 //TAB BAR
 const tabMenuStyles = document.querySelectorAll(".tabMenuStyle");
 const tabContentSettings = document.querySelectorAll(".tabContentSetting");
+
 tabMenuStyles.forEach((tabMenuStyle, index) => {
   tabMenuStyle.addEventListener("click", () => {
     // Remove active class from all tab menu styles
@@ -107,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
+//PARALLAX CONTROL
 window.addEventListener('scroll', function() {
   const parallaxBlue = document.querySelector('.introParallaxBlue');
   const parallaxRed = document.querySelector('.introParallaxRed');
