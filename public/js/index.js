@@ -156,3 +156,16 @@ window.addEventListener('scroll', function() {
   parallaxYellow.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)'; 
 
 });
+
+
+//PREVENT SCROLL TO VIEW AT FORM
+window.onload = function() {
+  // Scroll to the top of the page
+  window.scrollTo(0, 0);
+
+  // Optionally, remove focus from the form fields
+  const formFields = document.querySelectorAll('#form-container input, #form-container textarea, #form-container select');
+  formFields.forEach(field => {
+      field.blur(); // Remove focus from each field
+  });
+};
