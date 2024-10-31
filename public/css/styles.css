@@ -603,7 +603,7 @@ html {
     text-align: left;
     gap: 16px;  
     white-space: nowrap; /* Prevent line breaks */
-    animation: move 20s linear infinite; /* Animation for moving effect */ 
+    animation: move 60s linear infinite; /* Animation for moving effect */ 
 }
 
 
