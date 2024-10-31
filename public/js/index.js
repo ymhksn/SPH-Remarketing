@@ -49,23 +49,56 @@ closeOffCanvasLinks.forEach((link) => {
 
 //TAB BAR
 const tabMenuStyles = document.querySelectorAll(".tabMenuStyle");
+
 const tabContentSettings = document.querySelectorAll(".tabContentSetting");
 
+
 tabMenuStyles.forEach((tabMenuStyle, index) => {
+
   tabMenuStyle.addEventListener("click", () => {
+
     // Remove active class from all tab menu styles
+
     tabMenuStyles.forEach((style) => style.classList.remove("active"));
 
+
     // Add active class to the clicked tab menu style
+
     tabMenuStyle.classList.add("active");
 
+
     // Remove active class from all tab content settings
-    tabContentSettings.forEach((setting) => setting.classList.remove("active"));
+
+    tabContentSettings.forEach((setting) => {
+
+      setting.classList.remove("active");
+
+      // Remove animation classes
+
+      setting.querySelector('.tabContentLeft').classList.remove('animationslideInLeft');
+
+      setting.querySelector('.tabContentRight').classList.remove('animationslideInRight');
+
+    });
+
 
     // Add active class to the corresponding tab content setting
+
     const tabContentId = `tabContent${tabMenuStyle.dataset.tab}`;
-    document.getElementById(tabContentId).classList.add("active");
+
+    const activeContent = document.getElementById(tabContentId);
+
+    activeContent.classList.add("active");
+
+
+    // Add animation classes to the left and right content
+
+    activeContent.querySelector('.tabContentLeft').classList.add('animationslideInLeft');
+
+    activeContent.querySelector('.tabContentRight').classList.add('animationslideInRight');
+
   });
+
 });
 
 
