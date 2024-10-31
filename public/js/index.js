@@ -66,36 +66,39 @@ tabMenuStyles.forEach((tabMenuStyle, index) => {
 });
 
 //TESTIMONI CARD ARROW BUTTON
-document.addEventListener("DOMContentLoaded", function() {
-  const testimonials = document.querySelectorAll('.testimoniCardStyle');
-  let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', function() {
+  const testimoniCards = document.querySelectorAll('.testimoniCardStyle');
+  const arrowLeft = document.querySelector('.btnIconArrowLeft');
+  const arrowRight = document.querySelector('.btnIconArrowRight');
+  const testimoniContainer = document.querySelector('.testimoniAllContainer');
+  let currentCardIndex = 0;
 
-  // Function to show the current testimonial
-  function showTestimonial(index) {
-      testimonials.forEach((testimonial, i) => {
-          testimonial.classList.remove('active'); // Remove active class from all
-      });
+  // Function to move the cards
+  function moveCards(direction) {
+    if (direction === 'left') {
+      currentCardIndex--;
+      if (currentCardIndex < 0) {
+        currentCardIndex = testimoniCards.length - 1;
+      }
+    } else if (direction === 'right') {
+      currentCardIndex++;
+      if (currentCardIndex >= testimoniCards.length) {
+        currentCardIndex = 0;
+      }
+    }
 
-      // Add active class to the current testimonial
-      testimonials[index].classList.add('active');
+    // Calculate the scroll position for the target card
+    const targetCard = testimoniCards[currentCardIndex];
+    const scrollPosition = targetCard.offsetLeft - (testimoniContainer.offsetWidth / 2) + (targetCard.offsetWidth / 2);
 
-      // Scroll the active testimonial into view
-      testimonials[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+    // Scroll smoothly to the target card
+    testimoniContainer.scroll({
+      left: scrollPosition,
+      behavior: 'smooth' // Smooth scrolling behavior
+    });
   }
 
-  // Show the first testimonial initially
-  testimonials[currentIndex].classList.add('active');
-  
-  // Event listener for the left arrow button
-  document.querySelector('.btnIconArrowLeft').addEventListener('click', function() {
-      currentIndex = (currentIndex > 0) ? currentIndex - 1 : testimonials.length - 1; // Loop to the last if at the first
-      showTestimonial(currentIndex);
-  });
-
-  // Event listener for the right arrow button
-  document.querySelector('.btnIconArrowRight').addEventListener('click', function() {
-      currentIndex = (currentIndex < testimonials.length - 1) ? currentIndex + 1 : 0; // Loop to the first if at the last
-      showTestimonial(currentIndex);
-  });
+  // Event listeners for the arrows
+  arrowLeft.addEventListener('click', () => moveCards('left'));
+  arrowRight.addEventListener('click', () => moveCards('right'));
 });
-
