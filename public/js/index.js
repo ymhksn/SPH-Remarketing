@@ -65,6 +65,8 @@ tabMenuStyles.forEach((tabMenuStyle, index) => {
   });
 });
 
+
+
 //TESTIMONI CARD ARROW BUTTON
 document.addEventListener('DOMContentLoaded', function() {
   const testimoniCards = document.querySelectorAll('.testimoniCardStyle');
@@ -101,4 +103,20 @@ document.addEventListener('DOMContentLoaded', function() {
   // Event listeners for the arrows
   arrowLeft.addEventListener('click', () => moveCards('left'));
   arrowRight.addEventListener('click', () => moveCards('right'));
+});
+
+
+
+
+window.addEventListener('scroll', function() {
+  const parallaxBlue = document.querySelector('.introParallaxBlue');
+  const parallaxRed = document.querySelector('.introParallaxRed');
+  const parallaxYellow = document.querySelector('.introParallaxYellow');
+  const scrolled = window.scrollY; // Get the current scroll position
+
+  // Adjust the background position based on scroll
+  parallaxBlue.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)'; // Adjust the multiplier for speed
+  parallaxRed.style.transform = 'translateY(' + (scrolled * 0.6) + 'px)'; 
+  parallaxYellow.style.transform = 'translateY(' + (scrolled * 0.2) + 'px)'; 
+
 });
