@@ -563,7 +563,7 @@ html {
 
 .introImg{
     width: 100%;
-    height: 540px;
+    height: 480px;
     background-image: url("../images/section2_img.png");
     background-size: contain;
     background-position: center;
@@ -994,13 +994,13 @@ html {
 
 .bgPatternSquare{
     width: 100%;
-    height: 200px;
+    height: 240px;
     background-image: url("../images/bgPatternSquare.svg");
     background-size: 20px 20px;
     background-position: start;
     background-repeat: repeat;
     position: absolute;
-    bottom: 80px;
+    bottom: 40px;
 }
 
 .sect7Container{
@@ -1372,6 +1372,11 @@ html {
         padding: 24;
         border-radius: 8px;
         min-width: 360px; /* Set a minimum width for each card */
+    }
+
+    .bgPatternSquare{
+        height: 40%;
+        bottom: 40px;
     }
 
     /* FOOTER */
