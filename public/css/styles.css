@@ -523,20 +523,6 @@ html {
     overflow: hidden;
 }
 
-.introParallaxBlue {
-    position: absolute;
-    top: 80px;
-    right: 24vw;
-    z-index: -1;/* Ensure it is below the content */
-    transform: translateZ(0); /* For hardware acceleration */
-    will-change: transform;/* Optimize for performance */
-
-    width: 260px;
-    height: 160px; 
-    background-color: #2F4293;
-    border-radius: 16px;/* Rounded corners */
-}
-
 .introParallaxRed {
     position: absolute;
     top: 0;
@@ -1117,27 +1103,22 @@ html {
 
     .txtP1 {
         font-size: 14px;
-        font-weight: 400;
     }
 
     .txtP3 {
         font-size: 12px;
-        font-weight: 400;
     }
 
     .txtP4 {
         font-size: 10px;
-        font-weight: 400;
     }
 
     .txtB1 {
         font-size: 14px;
-        font-weight: 600;
     }
 
     .txtB2 {
         font-size: 12px;
-        font-weight: 600;
     }
 
     /* CUSTOM STYLES */
@@ -1201,15 +1182,19 @@ html {
 
     /* SECT2 - INTRO */
     #sect2 {
-        padding: 40px 2.5% 0;
+        padding: 0 2.5% 0;
     }
 
     .introContainer{
-        margin: 0 2.5%;
+        margin: 0 2.5% 0;
     }
 
     .introImg{
         height: 360px;
+    }
+
+    .introCopy{
+        padding-right: 16px;
     }
 
     /* SECT3 - FACTS */
@@ -1278,8 +1263,19 @@ html {
         padding: 80px 2.5%;
     }
 
-    .tabMenu{
+    .tabContainerMobile{
         overflow-x: scroll;
+        margin: 0;
+        padding: 0;
+    }
+
+    .tabMenu{
+        width: 200vw;
+    }
+
+    .tabMenuStyle{
+        flex: 1;
+        padding: 32px 24px;
     }
 
     .tabContentSetting.active { /* Show the active tab content */

@@ -151,8 +151,7 @@ window.addEventListener('scroll', function() {
   const scrolled = window.scrollY; // Get the current scroll position
 
   // Adjust the background position based on scroll
-  parallaxBlue.style.transform = 'translateY(' + (scrolled * 0.2) + 'px)'; // Adjust the multiplier for speed
-  parallaxRed.style.transform = 'translateY(' + (scrolled * 0.6) + 'px)'; 
+  parallaxRed.style.transform = 'translateY(' + (scrolled * 0.6) + 'px)'; // Adjust the multiplier for speed
   parallaxYellow.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)'; 
 
 });
