@@ -372,7 +372,7 @@ html {
   
 ::-webkit-scrollbar-thumb {
     border-radius: 16px;
-    background: #DE0F15;
+    background: #C53837;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -430,7 +430,7 @@ html {
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
+    background: linear-gradient(to top, rgba(250, 250, 250, 0.7), rgba(250, 250, 250, 0) 60%, rgba(250, 250, 250, 0));
 }
 
 @media (max-width: 991px) {
@@ -480,6 +480,28 @@ html {
 #sect1 {
     height: 90vh;
     position: relative;
+}
+
+.sect1Container {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.sect1Container.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideUpOpacity 2s ease-in-out;
+}
+
+@keyframes slideUpOpacity {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .mainBannerImg {
@@ -638,7 +660,7 @@ html {
 
 .fact3Container{
     padding: 24px 32px;
-    background-color: #DE0F15;
+    background-color: #C53837;
     border-radius: 16px;
     display: flex;
     justify-content: center;

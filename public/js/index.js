@@ -171,17 +171,17 @@ window.onload = function() {
 
 
 // //ANIMATION FOR MAIN BANNER TEXT
-// window.onload = function() {
+window.onload = function() {
 
-//   const content = document.querySelector('.sect1Container'); // Select the .sect1Container class
+  const content = document.querySelector('.sect1Container'); // Select the .sect1Container class
 
 
-//   // Allow the browser to register the initial state before making it visible
+  // Allow the browser to register the initial state before making it visible
 
-//   setTimeout(() => {
+  setTimeout(() => {
 
-//       content.classList.add('visible'); // Add the 'visible' class to trigger the CSS transition
+      content.classList.add('visible'); // Add the 'visible' class to trigger the CSS transition
 
-//   }, 10); // Short delay to ensure the transition is applied
+  }, 5); // Short delay to ensure the transition is applied
 
-// };
+};
