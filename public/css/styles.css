@@ -423,6 +423,16 @@ html {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.0) 50%, rgba(0, 0, 0, 0));
 }
 
+.whiteGradientOverlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0));
+}
+
 @media (max-width: 991px) {
     .navBarRight {
         flex-grow: 0;
@@ -472,8 +482,9 @@ html {
     position: relative;
 }
 
+
 .mainBannerImg {
-    width: 100%;
+    width: 100vw;
     height: 90vh;
     position: absolute;
     top: 0;
@@ -481,7 +492,7 @@ html {
     bottom: 0;
     right: 0;
     z-index: 1;
-    background-image: url("../images/mainBanner-1.png");
+    background-image: url("../images/mainBanner-1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -490,21 +501,18 @@ html {
 
 .sect1Copy {
     position: absolute;
-    bottom: calc(100%/4);
+    bottom: calc(100%/3);
     z-index: 2;
     text-align: left;
 }
 
 .sect1Copy1{
-    background-color: #EEAC40;
-    padding: 16px 64px;
-    display: inline-block;
+    font-size: 56px;
 }
 
 .sect1Copy2{
-    background-color: #C53837;
-    padding: 16px 64px;
-    display: block;
+    font-size: 56px;
+    font-weight: 400;
 }
 
 .scrollAnimation {
@@ -540,7 +548,7 @@ html {
 .introParallaxYellow {
     position: absolute;
     top: 0;
-    left: -200px;
+    left: -240px;
     z-index: -1;/* Ensure it is below the content */
     transform: translateZ(0); /* For hardware acceleration */
     will-change: transform;/* Optimize for performance */
@@ -1165,19 +1173,22 @@ html {
         height: 80vh;
     }
 
+    .sect1Container{
+        margin: 0 4%;
+    }
+
     .sect1Copy {
-        bottom: calc(100%/6);
+        bottom: calc(100%/3);
         padding: 0 8px;
     }
     
     .sect1Copy1{
-        padding: 16px 24px;
-        width: 70vw;
+        font-size: 40px;
     }
     
     .sect1Copy2{
-        padding: 16px 24px;
-        width: 80vw;
+        font-size: 40px;
+        font-weight: 400;
     }
 
     /* SECT2 - INTRO */
