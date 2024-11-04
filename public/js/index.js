@@ -173,15 +173,6 @@ window.onload = function() {
 // //ANIMATION FOR MAIN BANNER TEXT
 window.onload = function() {
 
-  const content = document.querySelector('.sect1Container'); // Select the .sect1Container class
-
-
-  // Allow the browser to register the initial state before making it visible
-
-  setTimeout(() => {
-
-      content.classList.add('visible'); // Add the 'visible' class to trigger the CSS transition
-
-  }, 5); // Short delay to ensure the transition is applied
-
+  const content = document.querySelector('.sect1Container'); 
+  content.classList.add('visible'); 
 };

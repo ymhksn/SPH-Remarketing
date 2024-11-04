@@ -77,6 +77,7 @@ a:hover {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    letter-spacing: 2px;
 }
 
 
@@ -85,6 +86,7 @@ a:hover {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    letter-spacing: 2px;
 }
 
 .txtH3 {
@@ -484,7 +486,7 @@ html {
 
 .sect1Container {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(80px);
 }
 
 .sect1Container.visible {
