@@ -170,9 +170,15 @@ window.onload = function() {
 };
 
 
-// //ANIMATION FOR MAIN BANNER TEXT
-window.onload = function() {
+//ANIMATION FOR MAIN BANNER TEXT
+// window.onload = function() {
+//   const content = document.querySelector('.sect1Container'); 
+//   content.classList.add('visible'); 
+// };
 
+document.addEventListener('DOMContentLoaded', function() {
   const content = document.querySelector('.sect1Container'); 
-  content.classList.add('visible'); 
-};
+  setTimeout(function() {
+      content.classList.add('visible'); 
+  }, 1000); // Delay of 1 second
+});
